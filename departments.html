@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
+	<title>Departments</title> 
+</head>
+	
+	<body>
+	
+	 <h1>Departments</h1>
+		
+		<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col">Address</th>
+				<th scope="col">Phone</th>
+				<th scope="col">Website</th>
+				<th scope="col">Head of department</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="department : ${departments}">
+				<td th:text="${department.name}"></td>
+				<td th:text="${department.address}"></td>
+				<td th:text="${department.phone}"></td>
+				<td th:text="${department.website}"></td>
+				<td th:text="${department.headOfDepartment}"></td>
+		</tbody>
+		</table>
+		
+		<script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
+	</body>
+</html>
